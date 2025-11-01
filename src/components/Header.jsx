@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+    setMenuOpen(false) // Close menu after clicking
   }
 
   const scrollToAbout = () => {
@@ -14,10 +17,12 @@ const Header = () => {
     if (hero) {
       hero.scrollIntoView({ behavior: 'smooth' })
     }
+    setMenuOpen(false) // Close menu after clicking
   }
 
   const goToHome = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+    setMenuOpen(false)
   }
 
   const openLinkedIn = () => {
@@ -26,6 +31,10 @@ const Header = () => {
 
   const downloadResume = () => {
     window.open('/resume.pdf', '_blank')
+  }
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
   }
 
   return (
@@ -37,9 +46,16 @@ const Header = () => {
           <p>SOFTWARE ENGINEER</p>
         </div>
       </div>
+
+      {/* Hamburger Menu Button - Only visible on mobile */}
+      <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle menu">
+        <span className={menuOpen ? 'hamburger-line open' : 'hamburger-line'}></span>
+        <span className={menuOpen ? 'hamburger-line open' : 'hamburger-line'}></span>
+        <span className={menuOpen ? 'hamburger-line open' : 'hamburger-line'}></span>
+      </button>
       
-      <nav className="nav">
-      <a onClick={scrollToAbout}>About Me</a>
+      <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
+        <a onClick={scrollToAbout}>About Me</a>
         <a onClick={() => scrollToSection('projects')}>My Project</a>
         <a onClick={() => scrollToSection('experience')}>My Experience</a>
         <a onClick={() => scrollToSection('journey')}>My Journey At PMU</a>
