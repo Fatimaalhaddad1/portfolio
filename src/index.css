@@ -111,11 +111,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
   .icon-button:hover {
     background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
   }
   
   .linkedin-button {
@@ -124,6 +125,7 @@
   
   .linkedin-button:hover {
     background-color: #005885;
+    transform: translateY(-3px);
   }
   
   /* ===========================
@@ -293,12 +295,15 @@
     background: #fff;
     color: #361F36;
     border: 1px solid #e7d7e7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
   
   .btn-outline:hover {
     background: #fff;
     color: #361F36;
-    border: 1px solid #e7d7e7;
+    border: 1px solid #c6b4e5;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(54, 31, 54, 0.15);
   }
   
   .chevron {
@@ -365,6 +370,13 @@
     border-radius: 10px;
   }
 
+  .hero-actions .btn {
+    width: 130px;
+    padding: 0.5rem 0.8rem; /* smaller height */
+    font-size: 1.1rem;       /* slightly smaller text */
+  }
+  
+  
   
   /* ===========================
      Generic section wrapper
@@ -404,14 +416,15 @@
     border-radius: 12px;
     padding: 2rem;
     border: 1px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
     border-left: 4px solid #361F36;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   }
   
   .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.02);
   }
   
   .project-card h3 {
@@ -425,21 +438,46 @@
     color: #5f667d;
     margin-bottom: 1rem;
   }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech-tag {
+    background-color: #f0e6f0;
+    color: #361F36;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
   
   .project-links {
     display: flex;
     gap: 1rem;
+    margin-top: 1.5rem;
   }
   
   .project-link {
-    color: #361F36;
+    background: linear-gradient(135deg, #361F36, #9C8383);
+    color: #fff;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    text-align: center;
   }
   
   .project-link:hover {
-    color: #9C8383;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(54, 31, 54, 0.25);
+    background: linear-gradient(135deg, #483d5a, #b09999);
   }
   
   /* ===========================
@@ -465,7 +503,7 @@
      =========================== */
   .memberships {
     text-align: left;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto 2rem;
   }
   
@@ -485,16 +523,12 @@
   }
   
   .membership-item {
-    background: #FFFFFF;
-    border: 1px;
     background-color: #FFFFFF;
     padding: 2rem;
     margin-bottom: 1rem;
     border-radius: 12px;
     border-left: 4px solid #361F36;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    padding: 1rem 1.25rem;
-    border-radius: 20px;
   }
   
   .membership-title {
@@ -510,6 +544,9 @@
   
   .membership-photos {
     margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .photos {
@@ -518,24 +555,34 @@
   }
   
   .photos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
   
   .photo-link {
     display: block;
+    width: 100%;
+    max-width: 280px;
     border-radius: 20px;
     overflow: hidden;
     border: 2px;
     background: #fff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .photo-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+
+  .photo-link:hover .photo-img {
+    filter: brightness(1.05);
+    transform: scale(1.05);
   }
   
   .photo-img {
@@ -544,6 +591,7 @@
     object-fit: cover;
     display: block;
     border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
   }
   
   /* ===========================
@@ -588,6 +636,13 @@
     border-radius: 12px;
     padding: 1.25rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  }
+
+  .skill-group:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    filter: brightness(1.02);
   }
   
   .skill-group h3 {
@@ -662,6 +717,40 @@
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* Hover effect for any images in experience items */
+  .experience-item img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .experience-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+  }
+
+  .coming-soon-message {
+    color: #9C8383;
+    font-size: 0.9rem;
+    font-style: italic;
+    animation: fadeIn 0.5s ease-in;
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* ===========================
@@ -675,15 +764,17 @@
     padding: 0.6rem 1rem;
     cursor: pointer;
     font-weight: 600;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .btn:hover {
-    background-color: #7c3aed;
+    background-color: #c6b4e5;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(54, 31, 54, 0.2);
   }
   
   .btn:active {
-    transform: translateY(1px);
+    transform: translateY(0px) scale(1);
   }
   
   /* ===========================
@@ -760,6 +851,13 @@
   
   .btn-gradient {
     background: linear-gradient(135deg, #361F36, #9C8383);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(54, 31, 54, 0.25);
+    background: linear-gradient(135deg, #483d5a, #b09999);
   }
   
   .contact-info h3 {

@@ -25,8 +25,6 @@ const Header = () => {
   }
 
   const downloadResume = () => {
-    <embed src="resume.pdf" type="application/pdf"/>
-L
     window.open('/resume.pdf', '_blank')
   }
 

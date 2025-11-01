@@ -7,7 +7,7 @@ const Hero = () => {
   }
 
   const openCV = () => {
-    window.open('/assets/Fatimah-Alhaddad-CV.pdf', '_blank')
+    window.open('/resume.pdf', '_blank')
   }
 
   return (
@@ -17,9 +17,9 @@ const Hero = () => {
         <p className="top-hero-sub">Software Engineer • UI/UX Designer • Mobile & Web Developer</p>
         <p className="top-hero-lead">Building practical, user-centered apps with clean design and reliable engineering.</p>
         <div className="hero-actions">
-          <button className="btn" onClick={() => scrollTo('contact')}>Contact me</button>
-          <button className="btn btn-outline" onClick={() => scrollTo('projects')}>My work</button>
-          <button className="btn btn-outline" onClick={openCV}>My CV</button>
+          <button className="btn btn-gradient" onClick={() => scrollTo('contact')}>Contact me</button>
+          <button className="btn btn-gradient" onClick={() => scrollTo('projects')}>My work</button>
+          <button className="btn btn-gradient" onClick={openCV}>My CV</button>
         </div>
         <button className="chevron" aria-label="Scroll to about" onClick={() => scrollTo('about')}>▾</button>
       </div>

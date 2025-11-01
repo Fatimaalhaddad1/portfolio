@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Experience = () => {
-  const openPublic = (path) => {
+  const [showMessage, setShowMessage] = useState({})
+
+  const openPublic = (path, experienceIndex, actionIndex) => {
+    // Check if the file path is empty or placeholder
+    if (!path || path === '' || path.includes('placeholder')) {
+      // Show the message for this specific button
+      const key = `${experienceIndex}-${actionIndex}`
+      setShowMessage(prev => ({ ...prev, [key]: true }))
+      
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        setShowMessage(prev => ({ ...prev, [key]: false }))
+      }, 3000)
+      return
+    }
+
     // Important: open synchronously to avoid popup blockers
     const absolute = path.startsWith('/') ? path : `/${path}`
     window.open(absolute, '_blank')
@@ -14,8 +29,8 @@ const Experience = () => {
       duration: "September 2025 - November 2025",
       description: "- Applied software engineering principles in documenting, organizing, and analyzing training-related data.\n- Contributed to maintaining digital records and reporting systems with focus on accuracy and consistency.\n- Facilitated Virtual Reality (VR) training sessions for employees by setting up, operating, and guiding them through interactive scenarios.\n- Tracked attendance and completion, ensuring employees were registered and certified after each session.\n- Strengthened ability to adapt engineering knowledge to industrial settings within a large-scale organization.",
       actions: [
-        { label: 'Certificate', file: '/aramco-certificate.png' },
-        { label: 'Recommendation Letter', file: '/aramco-recommendation.png' },
+        { label: 'Certificate', file: '' },
+        { label: 'Recommendation Letter', file: '' },
       ],
     },
     {
@@ -42,16 +57,25 @@ const Experience = () => {
 
             {exp.actions && exp.actions.length > 0 && (
               <div className="experience-actions">
-                {exp.actions.map((action, i) => (
-                  <button
-                    key={i}
-                    className="btn"
-                    onClick={() => openPublic(action.file)}
-                    aria-label={`${exp.title} - ${action.label}`}
-                  >
-                    {action.label}
-                  </button>
-                ))}
+                {exp.actions.map((action, i) => {
+                  const key = `${index}-${i}`
+                  return (
+                    <React.Fragment key={i}>
+                      <button
+                        className="btn btn-gradient"
+                        onClick={() => openPublic(action.file, index, i)}
+                        aria-label={`${exp.title} - ${action.label}`}
+                      >
+                        {action.label}
+                      </button>
+                      {showMessage[key] && (
+                        <span className="coming-soon-message">
+                          I'll be adding this soon!
+                        </span>
+                      )}
+                    </React.Fragment>
+                  )
+                })}
               </div>
             )}
           </li>

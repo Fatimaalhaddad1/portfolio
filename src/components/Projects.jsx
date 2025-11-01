@@ -42,7 +42,6 @@ const Projects = () => {
             </div>
             <div className="project-links">
               <a href={project.github} className="project-link">GitHub</a>
-              <a href={project.demo} className="project-link">Live Demo</a>
             </div>
           </div>
         ))}
