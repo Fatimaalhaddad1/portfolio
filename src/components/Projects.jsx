@@ -3,25 +3,25 @@ import React from 'react'
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce application built with React and Node.js, featuring user authentication, payment processing, and admin dashboard.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe API"],
-      github: "#",
-      demo: "#"
+      title: "FlashPass",
+      description: "A smart traffic-light priority system I developed for emergency vehicles. I designed and built the Flutter-based mobile app and Firebase backend that manage route requests, trigger green-light signals, and monitor real-time incident data. The system ensures faster emergency response through a secure, user-friendly, and reliable interface.",
+      technologies: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "Android Studio", "UI/UX Design"],
+      github: "https://github.com/ravDev-darting/flash-pass-app.git",
+     
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management tool with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
-      github: "#",
-      demo: "#"
+      title: "FlashPass Mockups",
+      description: "High-fidelity UI/UX mockups I designed for my FlashPass senior project using JustInMind. The prototypes illustrate user flows, mobile and web screens, and interface components for the emergency traffic-light priority system.",
+      technologies: ["JustInMind", "UI/UX Design", "Prototyping", "Wireframing"],
+      github: "https://github.com/Fatimaalhaddad1/FlashPass-Mockups.git",
+      
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather application that displays current conditions and forecasts with location-based services and interactive maps.",
-      technologies: ["JavaScript", "OpenWeather API", "Chart.js", "CSS3"],
-      github: "#",
-      demo: "#"
+      title: "Personal Portfolio Website",
+description: "A fully responsive React-based portfolio I designed and developed to showcase my projects, skills, and experience. The site features smooth animations, reusable components, and a modern UI/UX layout — all crafted with custom CSS and clean, accessible code.",
+technologies: ["React", "JavaScript", "HTML", "CSS", "UI/UX Design"],
+      github: "https://github.com/Fatimaalhaddad1/portfolio.git",
+
     }
   ]
 
