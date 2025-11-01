@@ -7,18 +7,15 @@ const Journey = () => {
       title: "Member of Public Relations at Google Developer Groups on Campus | PMU | 09/2024 – 05/2025",
       description: "– Handled communication with guests and speakers, promoted events, and supported coordination between teams to ensure effective outreach and engagement.",
       photos: [
-        // Replace with your real image URLs or public folder paths like "/events/gdg-pr-1.jpg"
-        '/public/gdg-pr-1.jpg',
-        
+        '/gdg-pr-1.jpg',
       ]
     },
     {
       title: "Member of Cybersecurity Department at Google Developer Groups on Campus | PMU | 09/2023 – 05/2024",
       description: "– Assisted in preparing workshop content, supporting event organization, and collaborating with team members to promote cybersecurity awareness on campus.",
       photos: [
-        // Replace with your real image URLs or public folder paths like "/events/gdg-cyber-1.jpg"
-        '/public/gdg-cyber-1.jpg',
-        '/public/gdg-cyber-2.jpg',
+        '/gdg-cyber-1.jpg',
+        '/gdg-cyber-2.jpg',
       ]
     }
   ]
