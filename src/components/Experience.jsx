@@ -29,8 +29,9 @@ const Experience = () => {
       duration: "September 2025 - November 2025",
       description: "- Applied software engineering principles in documenting, organizing, and analyzing training-related data.\n- Contributed to maintaining digital records and reporting systems with focus on accuracy and consistency.\n- Facilitated Virtual Reality (VR) training sessions for employees by setting up, operating, and guiding them through interactive scenarios.\n- Tracked attendance and completion, ensuring employees were registered and certified after each session.\n- Strengthened ability to adapt engineering knowledge to industrial settings within a large-scale organization.",
       actions: [
-        { label: 'Certificate', file: '' },
-        { label: 'Recommendation Letter', file: '' },
+        { label: 'Official Certificate', file: '/Certificate of Appreciation.jpg' },
+        { label: 'Certificate of Appreciation', file: '/Certificate of Appreciation.jpg' },
+        { label: 'Recommendation Letter', file: '/Recommendation Letter.jpg' },
       ],
     },
     {
