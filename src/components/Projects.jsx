@@ -6,7 +6,7 @@ const Projects = () => {
       title: "FlashPass",
       description: "A smart traffic-light priority system I developed for emergency vehicles. I designed and built the Flutter-based mobile app and Firebase backend that manage route requests, trigger green-light signals, and monitor real-time incident data. The system ensures faster emergency response through a secure, user-friendly, and reliable interface.",
       technologies: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "Android Studio", "UI/UX Design"],
-      github: "https://github.com/ravDev-darting/flash-pass-app.git",
+      github: "https://github.com/Fatimaalhaddad1/FlashPass.git",
      
     },
     {
