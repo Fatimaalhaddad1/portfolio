@@ -24,6 +24,15 @@ const Experience = () => {
 
   const experiences = [
     {
+      title: "SAP Young Professionals Program",
+      company: "SAP",
+      duration: "January 2026 - February 2026",
+      description: "- Completed an intensive preparation program for SAP Associate Consultant roles.\n- Trained on SAP technologies, enterprise systems, and business process fundamentals.\n- Developed implementation, integration, and client communication skills.\n- Explored SAP Build and low-code development concepts for enterprise applications.\n- Strengthened understanding of SAP solutions and digital transformation environments.",
+      actions: [
+        { label: 'SAP Build', file: '/SAP Build Certification.png' },
+      ]
+    },
+    {
       title: "Software Engineering Intern",
       company: "Aramco",
       duration: "September 2025 - November 2025",

@@ -1,28 +1,19 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId) => {
+    setMenuOpen(false)
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
-    setMenuOpen(false) // Close menu after clicking
   }
 
-  const scrollToAbout = () => {
-    // Scroll to hero section for "About Me"
-    const hero = document.querySelector('.hero-content')
-    if (hero) {
-      hero.scrollIntoView({ behavior: 'smooth' })
-    }
-    setMenuOpen(false) // Close menu after clicking
-  }
-
-  const goToHome = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    setMenuOpen(false)
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
   }
 
   const openLinkedIn = () => {
@@ -30,39 +21,34 @@ const Header = () => {
   }
 
   const downloadResume = () => {
-    window.open('/resume.pdf', '_blank')
-  }
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen)
+    window.open('Fatimah Alhaddad-CV.pdf', '_blank')
   }
 
   return (
     <header className="header">
-      <div className="header-left">
-        <div className="logo" onClick={goToHome} style={{ cursor: 'pointer' }}>FA</div>
+      <Link to="/" className="header-left" onClick={() => setMenuOpen(false)}>
+        <div className="logo">FA</div>
         <div className="logo-text">
           <h1>FATIMAH ALHADDAD</h1>
           <p>SOFTWARE ENGINEER</p>
         </div>
-      </div>
+      </Link>
 
-      {/* Hamburger Menu Button - Only visible on mobile */}
       <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle menu">
         <span className={menuOpen ? 'hamburger-line open' : 'hamburger-line'}></span>
         <span className={menuOpen ? 'hamburger-line open' : 'hamburger-line'}></span>
         <span className={menuOpen ? 'hamburger-line open' : 'hamburger-line'}></span>
       </button>
-      
-      <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
-        <a onClick={scrollToAbout}>About Me</a>
-        <a onClick={() => scrollToSection('projects')}>My Project</a>
-        <a onClick={() => scrollToSection('experience')}>My Experience</a>
-        <a onClick={() => scrollToSection('journey')}>My Journey At PMU</a>
-        <a onClick={() => scrollToSection('contact')}>Contact</a>
-      </nav>
-      
-      <div className="header-right">
+
+      <div className="header-nav-group">
+        <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
+          <Link to="/#about" onClick={() => setMenuOpen(false)} className="nav-link">About Me</Link>
+          <Link to="/#projects" onClick={() => setMenuOpen(false)} className="nav-link">My Project</Link>
+          <Link to="/#experience" onClick={() => setMenuOpen(false)} className="nav-link">My Experience</Link>
+          <Link to="/#journey" onClick={() => setMenuOpen(false)} className="nav-link">PMU Experience</Link>
+          <Link to="/#contact" onClick={() => setMenuOpen(false)} className="nav-link">Contact</Link>
+        </nav>
+        <div className="header-right">
         <div className="tooltip-container">
           <button className="icon-button" onClick={downloadResume} title="Download Resume">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -78,6 +64,7 @@ const Header = () => {
             </svg>
           </button>
           <span className="tooltip">Visit LinkedIn Profile</span>
+        </div>
         </div>
       </div>
     </header>

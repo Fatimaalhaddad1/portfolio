@@ -1,0 +1,53 @@
+export const projects = [
+  
+  {
+    slug: 'flashpass',
+    title: 'FlashPass',
+    subtitle: 'Smart traffic-light priority system for emergency vehicles',
+    description: 'Emergency traffic-light priority system that allows emergency vehicles to request green lights in real time for faster response.',
+    technologies: ['Flutter', 'Dart', 'Firebase', 'Android Studio', 'UI/UX Design'],
+    github: 'https://github.com/Fatimaalhaddad1/FlashPass.git',
+    about: 'FlashPass is a senior project that addresses the critical need for faster emergency vehicle response times. I designed and developed the complete system from concept to implementation, including the Flutter mobile application and Firebase backend. The solution enables emergency vehicles to request traffic-light priority along their routes, helping reduce response times during emergencies.',
+    features: [
+      'Flutter-based mobile app for emergency personnel',
+      'Firebase backend with Cloud Firestore for real-time data',
+      'Route request management and green-light signal triggering',
+      'Real-time incident monitoring and status updates',
+      'Secure, user-friendly interface',
+      'Cross-platform compatibility via Flutter',
+    ],
+  },
+  {
+    slug: 'flashpass-mockups',
+    title: 'FlashPass Mockups',
+    subtitle: 'High-fidelity UI/UX prototypes for FlashPass',
+    description: 'High-fidelity UI/UX mockups designed for the FlashPass system, illustrating user flows and interface concepts',
+    technologies: ['JustInMind', 'UI/UX Design', 'Prototyping', 'Wireframing'],
+    github: 'https://github.com/Fatimaalhaddad1/FlashPass-Mockups.git',
+    about: 'Before building the FlashPass application, I created comprehensive high-fidelity mockups to visualize user flows, screen layouts, and interface components. These prototypes served as the design foundation for both mobile and web interfaces of the emergency traffic-light priority system.',
+    features: [
+      'High-fidelity UI/UX mockups using JustInMind',
+      'Complete user flow illustrations',
+      'Mobile and web screen designs',
+      'Interface component library',
+      'Prototyping and wireframing deliverables',
+    ],
+  },
+  {
+    slug: 'portfolio',
+    title: 'Personal Portfolio Website',
+    subtitle: 'Responsive React portfolio showcasing projects and experience',
+    description: 'Responsive React portfolio website built to showcase my projects, skills, and experience with a modern UI',
+    technologies: ['React', 'JavaScript', 'HTML', 'CSS', 'UI/UX Design'],
+    github: 'https://github.com/Fatimaalhaddad1/portfolio.git',
+    about: 'This portfolio website demonstrates my frontend development skills and design sensibility. I built it from scratch using React and custom CSS, focusing on clean architecture, smooth animations, and an accessible, responsive layout that works across all devices.',
+    features: [
+      'Fully responsive design for all screen sizes',
+      'Smooth animations and transitions',
+      'Reusable React components',
+      'Custom CSS styling',
+      'Modern, clean UI/UX',
+      'Accessible, semantic markup',
+    ],
+  },
+]

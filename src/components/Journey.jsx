@@ -11,7 +11,7 @@ const Journey = () => {
       ]
     },
     {
-      title: "Member of Cybersecurity Department at Google Developer Groups on Campus | PMU | 09/2023 – 05/2024",
+      title: "Member of Cybersecurity at Google Developer Groups on Campus | PMU | 09/2023 – 05/2024",
       description: "– Assisted in preparing workshop content, supporting event organization, and collaborating with team members to promote cybersecurity awareness on campus.",
       photos: [
         '/gdg-cyber-1.jpg',
@@ -22,23 +22,16 @@ const Journey = () => {
 
   return (
     <section id="journey" className="section journey">
-      <h2>My Journey At PMU</h2>
+      <h2>PMU Experience</h2>
 
-      <div className="journey-content">
-        <div className="memberships">
-          <ul className="membership-list">
-            {memberships.map((membership, index) => (
-              <li key={index} className="membership-item">
-                <p className="membership-title">
-                  {membership.title}
-                </p>
-                <p className="membership-desc">
-                  {membership.description}
-                </p>
-                
-                {membership.photos.length > 0 && (
-                  <div className="membership-photos">
-                    <div className="photos-grid">
+      <div className="projects-grid">
+        {memberships.map((membership, index) => (
+          <div key={index} className="project-card">
+            <h3>{membership.title}</h3>
+            <p>{membership.description}</p>
+            {membership.photos.length > 0 && (
+              <div className="journey-photos">
+                <div className="journey-photos-grid">
                       {membership.photos.map((src, photoIndex) => (
                         <a
                           key={photoIndex}
@@ -51,13 +44,11 @@ const Journey = () => {
                           <img src={src} alt={`${membership.title} photo ${photoIndex + 1}`} className="photo-img" />
                         </a>
                       ))}
-                    </div>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   )
